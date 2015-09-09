@@ -40,6 +40,9 @@ describe( 'student', function(){
 				if(err)throw err;
 				res.should.have.status(200);
 				res.body.should.be.an.instanceOf(Object);
+				res.body.should.have.property('id').and.should.be.type('integer');
+				res.body.should.have.property('name').and.should.be.type('string');
+				res.body.should.have.property('studno');
 				done();
 			});
 		});
